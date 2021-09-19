@@ -1,24 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Text, View, ScrollView, Image, Dimensions } from 'react-native';
+import styles from './assets/styles/style';
+import Cat from './screens/cat';
+
+const width = Dimensions.get('window').width;
 
 export default function App() {
 	return (
-		<View style={styles.container}>
-			<Text>Open up App.js to start working on your app!</Text>
-			<StatusBar style="auto" />
-		</View>
+		<ScrollView>
+			<View style={styles.container}> 
+				<Text> This is the main screen</Text>
+				<Image 
+					source={require('./assets/images/react-native-pic.png')}
+					style={{width: width - 130, height: 200}}
+				/>
+				<Cat name="Cozzie" fur_features="floofy" />
+			</View>
+		</ScrollView> 
 	);
 }
 
 
-/* This is what a JSON object looks like */
-const styles = StyleSheet.create({
-	// An object called container
-	container: {
-		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-});

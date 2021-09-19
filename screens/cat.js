@@ -1,15 +1,18 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
+import styles from '../assets/styles/style';
 
 const getFullName = (firstName, secondName, thirdName) => {
     return firstName + " " + secondName + " " + thirdName;
 }
 
-const Cat = () => {
+
+const Cat = ({ name, fur_features }) => {
+    name = getFullName(name, "tum", "bruh");
     return (
-        <View>
-            <Text>
-                Hello, I am {getFullName("Rum", "Tum", "Tugger")}!
+        <View style={styles.container}>
+            <Text style={[styles.cat, {color : 'yellow'}]}>
+                Hello, I am {name}! And I am {fur_features}!
             </Text>
         </View>
     );
